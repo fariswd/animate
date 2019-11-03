@@ -18,7 +18,7 @@ import { MonoText } from '../components/StyledText';
 
 const { width } = Dimensions.get('window')
 
-const Breathing = () => {
+const Breathing = (props) => {
   const [fadeAnim] = useState(new Animated.Value(1))
   const [fadeOuter] = useState(new Animated.Value(1))
   const [fadeMid] = useState(new Animated.Value(1))
@@ -83,7 +83,9 @@ const Breathing = () => {
             backgroundColor: '#5b996b',
             opacity: fadeAnim,
           }}
-        />
+        >
+          {props.children}
+        </Animated.View>
 
       </Animated.View>
 
@@ -176,7 +178,11 @@ export default class HomeScreen extends React.Component {
         >
           <View style={{height: 2000, backgroundColor: 'whitesmoke'}}>
             <View style={{alignItems: 'center', paddingTop: 200, justifyContent: 'center', height: 200}}>
-              <Breathing />
+              <Breathing>
+                <TouchableOpacity onPress={() => this.props.navigation.navigate('Profile')}>
+                  <Text style={{textAlign: 'center'}}>Carousel</Text>
+                </TouchableOpacity>
+              </Breathing>
             </View>
           </View>
         </ScrollView>
