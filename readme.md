@@ -2,7 +2,7 @@
 Wow so fancy
 
 ## Preview
-```./preview.mp4```
+<img src="https://raw.githubusercontent.com/fariswd/animate/master/preview.gif" height="300">
 
 ## Run?
 ```
